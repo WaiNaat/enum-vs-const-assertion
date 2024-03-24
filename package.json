@@ -1,0 +1,35 @@
+{
+  "name": "enum-vs-const-assertion",
+  "version": "1.0.0",
+  "description": "궁금해요",
+  "main": "src/using.ts",
+  "type": "module",
+  "scripts": {
+    "ts-to-js": "npx tsc",
+    "esbuild:ts-to-bundled-js": "esbuild src/using.ts src/not-using.ts src/export-outside.ts --bundle --outdir=esbuild/ts-to-bundled-js",
+    "esbuild:js-to-bundled-js": "npm run ts-to-js && esbuild ts-to-js/using.js ts-to-js/not-using.js ts-to-js/export-outside.js --bundle --outdir=esbuild/js-to-bundled-js",
+    "do:esbuild": "npm run esbuild:ts-to-bundled-js && npm run esbuild:js-to-bundled-js",
+    "do:rollup": "npm run ts-to-js && npx rollup --config rollup.config.js",
+    "do:webpack-babel": "webpack",
+    "all": "npm run do:esbuild && npm run do:rollup && npm run do:webpack-babel"
+  },
+  "author": {
+    "name": "WaiNaat",
+    "email": "qoli0703@gmail.com",
+    "url": "https://github.com/WaiNaat/"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.24.3",
+    "@babel/preset-env": "^7.24.3",
+    "@babel/preset-typescript": "^7.24.1",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "babel-loader": "^9.1.3",
+    "esbuild": "^0.20.1",
+    "rollup": "^4.13.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.2",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

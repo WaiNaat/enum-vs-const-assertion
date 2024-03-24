@@ -1,0 +1,5 @@
+export const enum ConstEnum {
+  LOCAL_STORAGE = 'LOCAL_STORAGE',
+  SESSION_STORAGE = 'SESSION_STORAGE',
+  COOKIE = 'COOKIE'
+}

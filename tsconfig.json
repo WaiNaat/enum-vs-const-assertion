@@ -1,0 +1,11 @@
+{
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "esbuild", "rollup"],
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES6",
+    "outDir": "ts-to-js",
+    "removeComments": true,
+    "skipLibCheck": true,
+  }
+}
